@@ -1,6 +1,4 @@
-tools/scheduler-mcp/data/scheduler.db
-tools/scheduler-mcp/logs/scheduler.pid
-
+# LaTeX intermediate files
 *.aux
 *.bbl
 *.blg
