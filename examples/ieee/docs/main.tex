@@ -1,0 +1,108 @@
+\documentclass[12pt,a4paper]{ctexart}
+\usepackage[left=1.95cm,right=1.95cm,top=2.15cm,bottom=2.15cm]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{float}
+\usepackage[superscript]{cite}
+\usepackage{etoolbox}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+
+\makeatletter
+\def\@citess#1{\mbox{$\m@th^{\hbox{\OverciteFont{[#1]}}}$}}
+\makeatother
+
+\setstretch{1.35}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\graphicspath{{../assets/figures_hand/}{../}}
+\captionsetup{font=small,labelfont=bf}
+\hypersetup{
+  hidelinks,
+  pdfborder={0 0 0},
+  colorlinks=false
+}
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\renewcommand{\contentsname}{目\quad 录}
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftaftertoctitleskip}{1.2em}
+\renewcommand{\cfttoctitlefont}{\hfill\zihao{3}\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\setlength{\cftbeforesecskip}{0.35em}
+\setlength{\cftsecindent}{0em}
+\setlength{\cftsubsecindent}{2em}
+\setlength{\cftsecnumwidth}{2.3em}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecfont}{\normalsize}
+\renewcommand{\cftsecpagefont}{\normalsize}
+
+\ctexset{
+  section = {
+    format = \zihao{3}\bfseries,
+    beforeskip = 1.2em,
+    afterskip = 0.8em
+  },
+  subsection = {
+    format = \zihao{-3}\bfseries,
+    beforeskip = 1.0em,
+    afterskip = 0.6em
+  }
+}
+\preto\section{\clearpage}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+\newcommand{\makecoverpage}{
+  \begin{titlepage}
+    \centering
+    \vspace*{1.8cm}
+    \includegraphics[width=0.82\textwidth]{../OIP.png}\par
+    \vspace{1.6cm}
+    {\zihao{2}\bfseries 动力电池包智能装配与检测\par}
+    \vspace{1.2cm}
+    {\zihao{2}\bfseries （结课报告，2026春季学期）\par}
+    \vfill
+    {\zihao{3}
+    \begin{tabular}{p{3.2cm}p{8.5cm}}
+    \makebox[4\ccwd][s]{姓\hfill 名}： & \underline{\makebox[7.5cm][c]{张浩}} \\
+    [1.0em]
+    \makebox[4\ccwd][s]{学\hfill 号}： & \underline{\makebox[7.5cm][c]{SY2507815}} \\
+    [1.0em]
+    \makebox[4\ccwd][s]{学\hfill 院}： & \underline{\makebox[7.5cm][c]{机械工程及自动化学院}} \\
+    [1.0em]
+    \makebox[4\ccwd][s]{课程名称}： & \underline{\makebox[7.5cm][c]{现代制造技术与系统}} \\
+    \end{tabular}\par}
+    \vfill
+    {\zihao{4}\today\par}
+  \end{titlepage}
+}
+
+\begin{document}
+\thispagestyle{empty}
+\makecoverpage
+\input{sections/abstract_zh.tex}
+\newpage
+\vspace{1.0em}
+\input{sections/abstract_en.tex}
+\newpage
+\tableofcontents
+\newpage
+\input{sections/introduction.tex}
+\input{sections/product_task.tex}
+\input{sections/process_analysis.tex}
+\input{sections/digital_equipment.tex}
+\input{sections/intelligent_technologies.tex}
+\input{sections/new_mode.tex}
+\input{sections/system_path.tex}
+\input{sections/outlook.tex}
+\input{sections/conclusion.tex}
+\bibliographystyle{IEEEtran}
+\bibliography{../refs/bib/references}
+\end{document}
