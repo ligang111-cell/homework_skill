@@ -1,0 +1,22 @@
+tools/scheduler-mcp/data/scheduler.db
+tools/scheduler-mcp/logs/scheduler.pid
+
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+# *.pdf
+*.toc
+*.fdb_latexmk
+*.fls
+
+main.synctex.gz
+main.fls
+main.synctex(busy)
+main.fdb_latexmk
+main.xdv
+main.run.xml
+main.bcf
+.omx/
+

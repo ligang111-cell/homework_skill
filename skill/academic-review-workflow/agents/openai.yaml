@@ -1,0 +1,4 @@
+interface:
+  display_name: "Academic Review Workflow"
+  short_description: "Structure and QA review projects."
+  default_prompt: "Use this skill to scaffold or execute a literature-review project from the bundled template, then enforce the research, citation, figure, and revision workflow."

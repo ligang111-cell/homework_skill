@@ -1,0 +1,54 @@
+\documentclass{chinese-journal-of-mechanical-engineering}
+
+\addbibresource{../refs/bib/references.bib}
+\ExecuteBibliographyOptions{doi=false,url=false,eprint=false}
+
+\doi{}
+\setcounter{secnumdepth}{2}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\AtBeginBibliography{\clubpenalty=10000\widowpenalty=10000\interlinepenalty=10000}
+
+\renewcommand{\InfoBundle}{%
+    \title{xx}%
+    \author[1]{xx}%
+    \affil[1]{xx}%
+    \abst{\input{sections/abstract_zh.tex}}%
+    \keyword{xx}}
+
+\renewcommand{\EnInfoBundle}{%
+    \title{xx}%
+    \author[1]{xx}%
+    \affil[1]{xx}%
+    \abst{\input{sections/abstract_en.tex}}%
+    \keyword{xx}}
+
+\begin{document}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black
+}
+
+\maketitle
+\thispagestyle{firststyle}
+
+\begin{multicols}{2}
+\linespread{1.24}\selectfont
+\setcounter{section}{-1}
+\input{sections/introduction.tex}
+\input{sections/body.tex}
+\input{sections/conclusion.tex}
+\printbibliography
+\hrule\setlength{\parindent}{0pt}\vskip 1em
+\begingroup\footnotesize
+{\sffamily 作者简介：}
+xx。\\
+E-mail：xx
+\endgroup
+
+\end{multicols}
+
+\end{document}
