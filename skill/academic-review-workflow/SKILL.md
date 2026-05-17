@@ -10,7 +10,10 @@ Use this skill as the orchestration layer around an academic review project. It 
 ## Core workflow
 
 1. Create the project folder.
-   - Prefer copying `assets/project-template`; use `examples/` only as a finished reference project.
+   - Choose the template before writing:
+     - `assets/project-template` for CJME / Chinese-journal style papers.
+     - `assets/project-template-ieee` for IEEE-like single-column course reports.
+   - Use `examples/` only as finished reference projects, not as clean starters.
    - Keep the same layout: `docs/`, `docs/sections/`, `refs/papers/`, `refs/notes/`, `refs/bib/`, `outline/`, `assets/`.
 
 2. Read and update `README.md` before writing.
@@ -56,5 +59,5 @@ Use this skill as the orchestration layer around an academic review project. It 
 
 ## Read when needed
 
-- For the full ordered checklist and reusable wording, read `references/workflow.md`.
+- For the full ordered checklist, template-selection rules, and reusable wording, read `references/workflow.md`.
 - For project validation, run `scripts/check_review_project.py`.

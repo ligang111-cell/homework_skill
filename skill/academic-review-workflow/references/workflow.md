@@ -2,9 +2,12 @@
 
 ## 1. Start from a copy, never from a blank page
 
-1. Copy `assets/project-template` and rename it. Use `examples/` only as a finished reference project.
-2. Edit `README.md` first.
-3. Confirm:
+1. Choose the template first:
+   - `assets/project-template` for CJME / Chinese-journal style papers
+   - `assets/project-template-ieee` for IEEE-like single-column course reports
+2. Copy the selected template and rename it. Use `examples/` only as finished reference projects.
+3. Edit `README.md` first.
+4. Confirm:
    - topic
    - target length/page count
    - minimum number of papers

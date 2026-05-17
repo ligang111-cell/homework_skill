@@ -1,0 +1,65 @@
+\documentclass[12pt,a4paper]{ctexart}
+\usepackage[left=1.95cm,right=1.95cm,top=2.15cm,bottom=2.15cm]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{float}
+\usepackage[superscript]{cite}
+\usepackage{fancyhdr}
+
+\setstretch{1.35}
+\setlength{\parindent}{2em}
+\graphicspath{{../assets/}}
+\captionsetup{font=small,labelfont=bf}
+\hypersetup{hidelinks}
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\ctexset{
+  section = { format = \zihao{3}\bfseries },
+  subsection = { format = \zihao{-3}\bfseries }
+}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+\newcommand{\makecoverpage}{
+  \begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\zihao{2}\bfseries xx\par}
+    \vspace{1.2cm}
+    {\zihao{3}\bfseries xx\par}
+    \vfill
+    {\zihao{3}
+    \begin{tabular}{p{3.2cm}p{8.5cm}}
+    \makebox[4\ccwd][s]{姓\hfill 名}： & \underline{\makebox[7.5cm][c]{xx}} \\
+    [1.0em]
+    \makebox[4\ccwd][s]{学\hfill 号}： & \underline{\makebox[7.5cm][c]{xx}} \\
+    [1.0em]
+    \makebox[4\ccwd][s]{学\hfill 院}： & \underline{\makebox[7.5cm][c]{xx}} \\
+    [1.0em]
+    \makebox[4\ccwd][s]{课程名称}： & \underline{\makebox[7.5cm][c]{xx}} \\
+    \end{tabular}\par}
+    \vfill
+    {\zihao{4}\today\par}
+  \end{titlepage}
+}
+
+\begin{document}
+\thispagestyle{empty}
+\makecoverpage
+\input{sections/abstract_zh.tex}
+\newpage
+\input{sections/abstract_en.tex}
+\newpage
+\tableofcontents
+\newpage
+\input{sections/introduction.tex}
+\input{sections/body.tex}
+\input{sections/conclusion.tex}
+\bibliographystyle{IEEEtran}
+\bibliography{../refs/bib/references}
+\end{document}

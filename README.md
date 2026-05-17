@@ -23,7 +23,9 @@
 
 ## 最快开始
 
-1. 复制 `skill/academic-review-workflow/assets/project-template/`，改成你的项目名。  
+1. 先选模板，再复制为你的项目目录：  
+   - 中文期刊 / 机械工程学报风格：`skill/academic-review-workflow/assets/project-template/`
+   - IEEE / 单栏课程报告风格：`skill/academic-review-workflow/assets/project-template-ieee/`
 2. 先改新项目里的 `README.md`，写清题目、字数、页数、引用数、图片要求。  
 3. 使用 `academic-review-workflow` 作为总控 skill：
    - 先用 `academic-paper-strategist` 定题、检索、搭框架
@@ -51,6 +53,8 @@ homework_skill/
 ├─ templates/                     # 底层模板
 │  └─ cjme-latex/                 # 机械工程学报 LaTeX 模板
 ├─ examples/                      # 已完成示例，用来看最终效果
+│  ├─ cjme/
+│  └─ ieee/
 ├─ deploy.bat
 └─ deploy.sh
 ```
@@ -68,7 +72,8 @@ homework_skill/
 ## 每个目录各做什么
 
 - `skill/academic-review-workflow/`：真正的主流程入口
-- `skill/academic-review-workflow/assets/project-template/`：新项目起点，适合直接复制改名
+- `skill/academic-review-workflow/assets/project-template/`：CJME 风格新项目起点
+- `skill/academic-review-workflow/assets/project-template-ieee/`：IEEE 风格新项目起点
 - `examples/`：已完成示例，用来看成品长什么样
 - `templates/cjme-latex/`：底层排版模板，通常不直接从这里开始写
 - `<你的项目>/refs/notes/paper_index.md`：论文白名单账本，决定哪些文献可以被引用
