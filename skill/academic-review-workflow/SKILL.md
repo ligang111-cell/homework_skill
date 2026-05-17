@@ -31,6 +31,7 @@ Use this skill as the orchestration layer around an academic review project. It 
 5. Draft in order.
    - Then use `academic-paper-composer` to write from the approved outline.
    - Use numbered headings in the required style: `1.` / `1.1` / `1.1.1`.
+   - Write the “总结与展望” or “结论” section in a total-part-total structure, with the middle summary points formatted as `（1）` / `（2）` / `（3）`.
    - Add mathematical formulas only when they come from textbooks or papers, and cite their source.
    - Leave figure placeholders first; tell the author to capture reference-paper figures into `assets/` later.
 
@@ -50,6 +51,7 @@ Use this skill as the orchestration layer around an academic review project. It 
 - Every reference is cited no more than 2 times unless the README explicitly overrides this.
 - The paper reaches the README minimum reference count.
 - Every figure label is referenced exactly once, and every figure reference resolves to an actual figure label.
+- The conclusion section uses a total-part-total structure with numbered summary points `（1）` / `（2）` / `（3）`.
 - Abstract, title, keywords, and body all match the same topic.
 - No personal information remains in reusable templates.
 

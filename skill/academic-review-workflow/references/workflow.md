@@ -38,6 +38,7 @@
 ## 3. Non-negotiable writing rules
 
 - Use `1.` / `1.1` / `1.1.1` heading hierarchy.
+- Write “总结与展望” or “结论” in a total-part-total structure, using `（1）` / `（2）` / `（3）` for the middle summary points.
 - Do not cite papers that are not downloaded locally.
 - Do not let any one reference appear more than twice unless the project rules say otherwise.
 - Every figure must be cited exactly once.
@@ -75,4 +76,3 @@ Read the paper as if deciding whether it meets the assignment brief:
 5. Are references sufficient, real, and used with discipline?
 6. Are the visuals and formulas functional rather than ornamental?
 7. Is the prose clear, fluent, and free of irrelevant course-language?
-
