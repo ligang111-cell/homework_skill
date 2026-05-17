@@ -31,7 +31,7 @@ Structure:
 - `refs/notes/` per-paper reading notes
 - `refs/bib/` BibTeX database
 - `outline/` working outline and writing plan
-- `assets/figures/` figures used in the report
+- `assets/` figures used in the report
 
 Build:
 - Working file: `docs/main.tex`

@@ -2,7 +2,7 @@
 
 ## 1. Start from a copy, never from a blank page
 
-1. Copy `examples/科技论文写作` and rename it, or use `assets/project-template`.
+1. Copy `assets/project-template` and rename it. Use `examples/` only as a finished reference project.
 2. Edit `README.md` first.
 3. Confirm:
    - topic

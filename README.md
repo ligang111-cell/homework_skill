@@ -23,7 +23,7 @@
 
 ## 最快开始
 
-1. 复制 `examples/科技论文写作/`，改成你的项目名。  
+1. 复制 `skill/academic-review-workflow/assets/project-template/`，改成你的项目名。  
 2. 先改新项目里的 `README.md`，写清题目、字数、页数、引用数、图片要求。  
 3. 使用 `academic-review-workflow` 作为总控 skill：
    - 先用 `academic-paper-strategist` 定题、检索、搭框架
@@ -35,6 +35,8 @@
 ```bash
 python skill/academic-review-workflow/scripts/check_review_project.py <你的项目目录>
 ```
+
+这个脚本负责机械检查；主题一致性、摘要是否贴合正文、结论结构是否自然，仍需要人工复核。
 
 ## 仓库结构
 
@@ -48,8 +50,7 @@ homework_skill/
 │  └─ drawio-skill/               # 图示辅助
 ├─ templates/                     # 底层模板
 │  └─ cjme-latex/                 # 机械工程学报 LaTeX 模板
-├─ examples/                      # 可直接复制的示例项目
-│  └─ 科技论文写作/
+├─ examples/                      # 已完成示例，用来看最终效果
 ├─ deploy.bat
 └─ deploy.sh
 ```
@@ -67,13 +68,14 @@ homework_skill/
 ## 每个目录各做什么
 
 - `skill/academic-review-workflow/`：真正的主流程入口
-- `examples/科技论文写作/`：已经成型的示例工程，适合直接复制改名
+- `skill/academic-review-workflow/assets/project-template/`：新项目起点，适合直接复制改名
+- `examples/`：已完成示例，用来看成品长什么样
 - `templates/cjme-latex/`：底层排版模板，通常不直接从这里开始写
-- `refs/notes/paper_index.md`：论文白名单账本，决定哪些文献可以被引用
+- `<你的项目>/refs/notes/paper_index.md`：论文白名单账本，决定哪些文献可以被引用
 
 ## 推荐工作顺序
 
-1. 复制示例项目  
+1. 复制干净模板  
 2. 修改 README  
 3. 定题与检索  
 4. 下载论文  

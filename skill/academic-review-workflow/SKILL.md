@@ -10,8 +10,7 @@ Use this skill as the orchestration layer around an academic review project. It 
 ## Core workflow
 
 1. Create the project folder.
-   - If the repository contains `examples/科技论文写作`, copy that folder first and rename it to the target project name.
-   - Otherwise copy `assets/project-template`.
+   - Prefer copying `assets/project-template`; use `examples/` only as a finished reference project.
    - Keep the same layout: `docs/`, `docs/sections/`, `refs/papers/`, `refs/notes/`, `refs/bib/`, `outline/`, `assets/`.
 
 2. Read and update `README.md` before writing.
@@ -43,16 +42,16 @@ Use this skill as the orchestration layer around an academic review project. It 
 
 7. Run deterministic checks before declaring completion.
    - Use `scripts/check_review_project.py <project_root>`.
-   - Fix any violations it reports, then rerun until clean.
+   - This script only performs mechanical checks; fix any violations it reports, then rerun until clean.
 
 ## Required final checks
 
 - Every cited paper exists in `refs/papers/` and appears in `refs/notes/paper_index.md`.
 - Every reference is cited no more than 2 times unless the README explicitly overrides this.
-- The paper reaches the README minimum reference count.
+- The paper reaches the README minimum reference count. Check this manually unless the project adds a custom validator.
 - Every figure label is referenced exactly once, and every figure reference resolves to an actual figure label.
-- The conclusion section uses a total-part-total structure with numbered summary points `（1）` / `（2）` / `（3）`.
-- Abstract, title, keywords, and body all match the same topic.
+- The conclusion section uses a total-part-total structure with numbered summary points `（1）` / `（2）` / `（3）`. Check this manually.
+- Abstract, title, keywords, and body all match the same topic. Check this manually.
 - No personal information remains in reusable templates.
 
 ## Read when needed
