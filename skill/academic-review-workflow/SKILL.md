@@ -5,7 +5,7 @@ description: Create and execute structured academic review-paper projects from a
 
 # Academic Review Workflow
 
-Use this skill as the orchestration layer around an academic review project. It turns a copied project folder into a disciplined pipeline rather than a loose collection of files.
+Use this skill as the orchestration layer around an academic review project.
 
 ## Core workflow
 
@@ -21,12 +21,12 @@ Use this skill as the orchestration layer around an academic review project. It 
    - Replace every placeholder before substantive drafting.
 
 3. Plan before drafting.
-   - Use the `academic_paper_skills` pair in order: first `academic-paper-strategist` for topic confirmation, search strategy, gap analysis, source selection, and outline design.
+   - Use `academic-paper-strategist` first for topic confirmation, search strategy, gap analysis, source selection, and outline design.
    - Do not draft the paper until the topic, outline, and evidence base are coherent.
 
 4. Build the evidence base before drafting.
-   - Download at least the required number of real papers into `refs/papers/` first.
-   - Maintain `refs/notes/paper_index.md` as the allowed-citation ledger: every cited key must map to a real downloaded PDF.
+   - Download the required real papers into `refs/papers/` first.
+   - Maintain `refs/notes/paper_index.md` as the allowed-citation ledger. Prefer recording a local PDF link for each key; the checker accepts a key-only row but cannot verify a file path from it.
    - Add only real sources to `refs/bib/references.bib`.
    - Do not cite undownloaded papers.
 
@@ -49,15 +49,15 @@ Use this skill as the orchestration layer around an academic review project. It 
 
 ## Required final checks
 
-- Every cited paper exists in `refs/papers/` and appears in `refs/notes/paper_index.md`.
-- Every reference is cited no more than 2 times unless the README explicitly overrides this.
-- The paper reaches the README minimum reference count. Check this manually unless the project adds a custom validator.
+- Every cited paper appears in `refs/notes/paper_index.md`; use local PDF links there when you want the checker to verify file existence.
+- Every reference stays within the citation-frequency rule in `README.md`.
+- The paper reaches the README minimum reference count when that count is numeric.
 - Every figure label is referenced exactly once, and every figure reference resolves to an actual figure label.
 - The conclusion section uses a total-part-total structure with numbered summary points `（1）` / `（2）` / `（3）`. Check this manually.
 - Abstract, title, keywords, and body all match the same topic. Check this manually.
 - No personal information remains in reusable templates.
 
-## Read when needed
+## Validation
 
-- For the full ordered checklist, template-selection rules, and reusable wording, read `references/workflow.md`.
-- For project validation, run `scripts/check_review_project.py`.
+- Run `scripts/check_review_project.py <project_root>` before delivery.
+- It checks citation frequency, bibliography entries, paper-index coverage, optional local PDF links, minimum citation count, and figure-reference mechanics.
