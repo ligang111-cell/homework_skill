@@ -1,0 +1,82 @@
+# homework_skill
+
+这是一个面向“课程论文 / 文献综述 / 小型学术写作任务”的组合式 skill 仓库。 
+写作工作流：
+
+```text
+先看要求
+  ↓
+定题与搭框架
+  ↓
+先下载真实论文
+  ↓
+再写正文
+  ↓
+最后做引用、图表、摘要和全文质检
+```
+
+## 适合谁用
+
+- 想快速搭一个综述论文项目的人
+- 需要按固定流程完成课程论文、短篇综述、调研类报告的人
+- 希望把“选题、检索、写作、润色、检查”连成一条稳定流水线的人
+
+## 最快开始
+
+1. 复制 `examples/科技论文写作/`，改成你的项目名。  
+2. 先改新项目里的 `README.md`，写清题目、字数、页数、引用数、图片要求。  
+3. 使用 `academic-review-workflow` 作为总控 skill：
+   - 先用 `academic-paper-strategist` 定题、检索、搭框架
+   - 再把真实论文下载到 `refs/papers/`
+   - 然后用 `academic-paper-composer` 按框架写作
+   - 最后做全文润色与规则检查
+4. 完成后运行检查脚本：
+
+```bash
+python skill/academic-review-workflow/scripts/check_review_project.py <你的项目目录>
+```
+
+## 仓库结构
+
+```text
+homework_skill/
+├─ README.md
+├─ skill/                         # 可复用能力层
+│  ├─ academic-review-workflow/   # 本仓库的总控 skill
+│  ├─ academic_paper_skills/      # 选题与成文辅助
+│  ├─ humanizer_zh/               # 中文润色
+│  └─ drawio-skill/               # 图示辅助
+├─ templates/                     # 底层模板
+│  └─ cjme-latex/                 # 机械工程学报 LaTeX 模板
+├─ examples/                      # 可直接复制的示例项目
+│  └─ 科技论文写作/
+├─ deploy.bat
+└─ deploy.sh
+```
+
+## 你真正需要记住的规则
+
+- 未下载到 `refs/papers/` 的论文，不要引用
+- 每篇参考文献最多引用 2 次
+- 每张图必须且只能被引用 1 次
+- 标题层级统一用 `1.`、`1.1`、`1.1.1`
+- 数学公式必须来自教材或论文
+- “总结与展望 / 结论”采用总—分—总结构，中间用 `（1）（2）（3）`
+- 不要写“从课程内容看”“课程要求表明”这类话
+
+## 每个目录各做什么
+
+- `skill/academic-review-workflow/`：真正的主流程入口
+- `examples/科技论文写作/`：已经成型的示例工程，适合直接复制改名
+- `templates/cjme-latex/`：底层排版模板，通常不直接从这里开始写
+- `refs/notes/paper_index.md`：论文白名单账本，决定哪些文献可以被引用
+
+## 推荐工作顺序
+
+1. 复制示例项目  
+2. 修改 README  
+3. 定题与检索  
+4. 下载论文  
+5. 写摘要、引言、正文、结论  
+6. 补图、补公式  
+7. 做最终检查  

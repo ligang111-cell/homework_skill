@@ -10,7 +10,7 @@ Use this skill as the orchestration layer around an academic review project. It 
 ## Core workflow
 
 1. Create the project folder.
-   - If the repository contains `example/科技论文写作`, copy that folder first and rename it to the target project name.
+   - If the repository contains `examples/科技论文写作`, copy that folder first and rename it to the target project name.
    - Otherwise copy `assets/project-template`.
    - Keep the same layout: `docs/`, `docs/sections/`, `refs/papers/`, `refs/notes/`, `refs/bib/`, `outline/`, `assets/`.
 
