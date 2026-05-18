@@ -2,36 +2,28 @@
 
 ## 本地核心文献库
 
-以下文献均已实际下载到 `refs/papers/`。它们构成当前工程可核查的本地核心证据库，但不代表全文参考文献全集；全文仍可引用其他已登记来源。
+只登记已经下载到 `refs/papers/` 的本地核心论文。全文参考文献全集由 `refs/bib/references.bib` 管理。
 
-| 序号 | Key | Year | 角色 | 主题 | 拟用于章节 | 图源潜力 |
-|---:|---|---:|---|---|---|---|
-| 01 | Kampker2021JRem | 2021 | 基础 / 产品主线 | 电池包结构与再制造流程 | 引言、产品构成、工艺流程 | 高 |
-| 02 | Kumar2025JMEP | 2025 | 应用 | 电池包连接片激光焊接 | 工艺流程、检测流程 | 中 |
-| 03 | Villagrossi2023JRem | 2023 | 应用 / 趋势 | 电池包拆解机器人与协作 | 引言、产品任务、前景 | 高 |
-| 04 | Liang2025JRem | 2025 | 应用 | 电池模组拆解机器人单元 | 工艺任务、前景 | 中 |
-| 05 | Ronai2023SAS | 2023 | 应用 | 子装配体机器人自动检查 | 数字化装备、检测 | 中 |
-| 06 | Khan2021JRem | 2021 | 方法族 / 图源 | 视觉引导机器人检测 | 数字化装备、视觉技术 | 高 |
-| 07 | Nwankpa2021JRem | 2021 | 方法族 | 深度学习在再制造检测中的应用 | AI 技术应用 | 中 |
-| 08 | Zhu2025JIM | 2025 | 方法族 / 图源 | 基于 CAD 合成数据的装配质量检测 | 检测流程、视觉与 AI | 高 |
-| 09 | Elhendawy2025IJPEM | 2025 | 方法族 | 焊接缺陷 CNN 检测 | 焊接质量检测 | 中 |
-| 10 | Ma2024AIR | 2024 | 综述 / 比较 | 工业表面缺陷检测综述 | 视觉检测综述 | 低 |
-| 11 | Keshvarparast2024JIM | 2024 | 综述 / 比较 | 协作机器人制造与装配综述 | 人机协作、系统设计 | 中 |
-| 12 | Gervasi2023IJAMT | 2023 | 比较 | 手工装配与人机协作对比 | 人机协作效果分析 | 低 |
-| 13 | Faccio2021IJAMT | 2021 | 方法族 | 协作装配节拍优化方法 | 新模式实现路径 | 低 |
-| 14 | Alessio2024JIM | 2024 | 方法族 | 人机协作任务分类 | 新模式工位分工 | 中 |
-| 15 | Massouh2025JIM | 2025 | 趋势 | 人融入智能制造的多智能体规划 | 新模式规划与调度 | 中 |
-| 16 | Elbasheer2025JIM | 2025 | 趋势 | LLM 驱动生产计划与仿真生成 | 大模型辅助决策 | 中 |
-| 17 | Sahota2025JIM | 2025 | 方法族 | 自动化生产计划知识表示与推理 | 知识推理层 | 低 |
-| 18 | Meyers2024JIM | 2024 | 方法族 / 图源 | 制造业知识图谱框架 | 知识图谱层 | 高 |
-| 19 | Wang2025CJME | 2025 | 应用 / 图源 | 复杂产品装配过程知识图谱自动生成 | 知识图谱与装配知识 | 高 |
-| 20 | Pulikottil2023IJAMT | 2023 | 综述 / 比较 | 制造业多智能体综述 | 智能体与系统协同 | 低 |
-| 21 | Ji2024SciRep | 2024 | 趋势 / 图源 | Foundation Models 辅助人机协作装配 | 大模型 / 视觉基础模型 | 高 |
-
-## 文献使用说明
-
-- 电池包具体产品与工艺主线主要依赖 `01`、`02`、`03`、`04`、`05`、`06`。
-- 机器视觉与 AI 检测主线主要依赖 `06`、`07`、`08`、`09`、`10`。
-- 人机协作与协作机器人主线主要依赖 `11`、`12`、`13`、`14`、`21`。
-- 知识图谱、大模型和智能体主线主要依赖 `15`、`16`、`17`、`18`、`19`、`20`、`21`。
-- 后续补图优先从 `01`、`03`、`06`、`08`、`18`、`19`、`21` 中选取与正文最匹配的图。
+| Key | 角色 | 拟用于章节 | PDF |
+|---|---|---|---|
+| Kampker2021JRem | 基础 / 产品主线 | 引言、产品构成、工艺流程 | [01_Kampker2021JRem_BatteryPackRemanufacturing.pdf](../papers/01_Kampker2021JRem_BatteryPackRemanufacturing.pdf) |
+| Kumar2025JMEP | 应用 | 工艺流程、检测流程 | [02_Kumar2025JMEP_LaserOverlapWeldingBatteryPack.pdf](../papers/02_Kumar2025JMEP_LaserOverlapWeldingBatteryPack.pdf) |
+| Villagrossi2023JRem | 应用 / 趋势 | 引言、产品任务、前景 | [03_Villagrossi2023JRem_RoboticsBatteryPackDisassembly.pdf](../papers/03_Villagrossi2023JRem_RoboticsBatteryPackDisassembly.pdf) |
+| Liang2025JRem | 应用 | 工艺任务、前景 | [04_Liang2025JRem_RoboticCellBatteryModuleDisassembly.pdf](../papers/04_Liang2025JRem_RoboticCellBatteryModuleDisassembly.pdf) |
+| Ronai2023SAS | 应用 | 数字化装备、检测 | [05_Ronai2023SAS_RoboticCheckSubassemblySimulation.pdf](../papers/05_Ronai2023SAS_RoboticCheckSubassemblySimulation.pdf) |
+| Khan2021JRem | 方法族 / 图源 | 数字化装备、视觉技术 | [06_Khan2021JRem_VisionGuidedRoboticInspection.pdf](../papers/06_Khan2021JRem_VisionGuidedRoboticInspection.pdf) |
+| Nwankpa2021JRem | 方法族 | AI 技术应用 | [07_Nwankpa2021JRem_RemanufacturingInspectionDeepLearning.pdf](../papers/07_Nwankpa2021JRem_RemanufacturingInspectionDeepLearning.pdf) |
+| Zhu2025JIM | 方法族 / 图源 | 检测流程、视觉与 AI | [08_Zhu2025JIM_AutomatedAssemblyQualityInspection.pdf](../papers/08_Zhu2025JIM_AutomatedAssemblyQualityInspection.pdf) |
+| Elhendawy2025IJPEM | 方法族 | 焊接质量检测 | [09_Elhendawy2025IJPEM_WeldingDefectDetectionCNN.pdf](../papers/09_Elhendawy2025IJPEM_WeldingDefectDetectionCNN.pdf) |
+| Ma2024AIR | 综述 / 比较 | 视觉检测综述 | [10_Ma2024AIR_SurfaceDefectInspectionReview.pdf](../papers/10_Ma2024AIR_SurfaceDefectInspectionReview.pdf) |
+| Keshvarparast2024JIM | 综述 / 比较 | 人机协作、系统设计 | [11_Keshvarparast2024JIM_CollaborativeRobotsReview.pdf](../papers/11_Keshvarparast2024JIM_CollaborativeRobotsReview.pdf) |
+| Gervasi2023IJAMT | 比较 | 人机协作效果分析 | [12_Gervasi2023IJAMT_ManualAssemblyVsHRC.pdf](../papers/12_Gervasi2023IJAMT_ManualAssemblyVsHRC.pdf) |
+| Faccio2021IJAMT | 方法族 | 新模式实现路径 | [13_Faccio2021IJAMT_OptimalAssemblyCycleHRC.pdf](../papers/13_Faccio2021IJAMT_OptimalAssemblyCycleHRC.pdf) |
+| Alessio2024JIM | 方法族 | 新模式工位分工 | [14_Alessio2024JIM_TaskClassificationHRCAsssembly.pdf](../papers/14_Alessio2024JIM_TaskClassificationHRCAsssembly.pdf) |
+| Massouh2025JIM | 趋势 | 新模式规划与调度 | [15_Massouh2025JIM_MultiAgentPlanningHumanIntegratedManufacturing.pdf](../papers/15_Massouh2025JIM_MultiAgentPlanningHumanIntegratedManufacturing.pdf) |
+| Elbasheer2025JIM | 趋势 | 大模型辅助决策 | [16_Elbasheer2025JIM_LLMProductionPlanningSimulation.pdf](../papers/16_Elbasheer2025JIM_LLMProductionPlanningSimulation.pdf) |
+| Sahota2025JIM | 方法族 | 知识推理层 | [17_Sahota2025JIM_KnowledgeRepresentationProductionPlanning.pdf](../papers/17_Sahota2025JIM_KnowledgeRepresentationProductionPlanning.pdf) |
+| Meyers2024JIM | 方法族 / 图源 | 知识图谱层 | [18_Meyers2024JIM_KnowledgeGraphManufacturingAnalysis.pdf](../papers/18_Meyers2024JIM_KnowledgeGraphManufacturingAnalysis.pdf) |
+| Wang2025CJME | 应用 / 图源 | 知识图谱与装配知识 | [19_Wang2025CJME_AssemblyProcessKnowledgeGraphTextMining.pdf](../papers/19_Wang2025CJME_AssemblyProcessKnowledgeGraphTextMining.pdf) |
+| Pulikottil2023IJAMT | 综述 / 比较 | 智能体与系统协同 | [20_Pulikottil2023IJAMT_AgentBasedManufacturingReview.pdf](../papers/20_Pulikottil2023IJAMT_AgentBasedManufacturingReview.pdf) |
+| Ji2024SciRep | 趋势 / 图源 | 大模型 / 视觉基础模型 | [21_Ji2024SciRep_FoundationModelsHRCAssembly.pdf](../papers/21_Ji2024SciRep_FoundationModelsHRCAssembly.pdf) |

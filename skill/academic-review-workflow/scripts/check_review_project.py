@@ -50,6 +50,8 @@ def parse_index(project_root: Path, bib_keys: set[str]) -> dict[str, Path | None
             continue
         cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
         keys = [cell for cell in cells if cell in bib_keys]
+        if not keys and cells and cells[0] not in {"Key", "序号"}:
+            keys = [cells[0]]
         if not keys:
             continue
         link = MARKDOWN_LINK_RE.search(line)
@@ -100,14 +102,15 @@ def main() -> int:
             problems.append(f"citation overuse: {key} appears {count} times")
         if key not in bib_keys:
             problems.append(f"missing bib entry: {key}")
-        if key not in index:
-            problems.append(f"missing paper-index entry: {key}")
-        elif index[key] is not None and not index[key].exists():
+        if key in index and index[key] is not None and not index[key].exists():
             problems.append(f"missing downloaded PDF for {key}: {index[key]}")
 
     linked_pdfs = {path for path in index.values() if path is not None}
-    for pdf in sorted(downloaded_pdfs - linked_pdfs):
-        problems.append(f"downloaded PDF missing paper-index link: {pdf}")
+    existing_linked_pdfs = {path for path in linked_pdfs if path.exists()}
+    if citations and len(existing_linked_pdfs) < 10:
+        problems.append(
+            f"insufficient indexed core PDFs: {len(existing_linked_pdfs)} found, 10 required"
+        )
 
     for key, path in sorted(index.items()):
         if path is not None and key not in citations:
