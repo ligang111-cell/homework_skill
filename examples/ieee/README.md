@@ -12,7 +12,6 @@ Structure:
 - `refs/papers/` downloaded reference PDFs
 - `refs/notes/` per-paper reading notes
 - `refs/bib/` BibTeX database
-- `outline/` working outline and writing plan
 - `assets/` figures used in the report
 
 Build:
