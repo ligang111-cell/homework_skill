@@ -1,87 +1,87 @@
 ---
 name: academic-review-workflow
-description: Create and execute structured academic review-paper projects from a reusable folder template. Use when Codex needs to scaffold a literature-review/report workspace, turn README requirements into an ordered writing plan, coordinate academic-paper-strategist and academic-paper-composer, enforce evidence-base citation rules, or run final checks for citation frequency, figure references, topic fit, abstract fidelity, and reviewer-style quality control.
+description: 从可复用模板创建并执行结构化学术综述 / 课程报告项目。适用于需要搭建文献综述工作区、把 README 要求转化为写作计划、协调 academic-paper-strategist 与 academic-paper-composer、落实证据库与引用规则，或在交付前检查引用频次、图表引用、主题一致性、摘要贴合度和审稿式质量控制时。
 ---
 
-# Academic Review Workflow
+# 学术综述写作工作流
 
-Use this skill as the orchestration layer around an academic review project.
+将本 skill 作为学术综述项目的总控层使用。
 
-## Core workflow
+## 核心流程
 
-1. Create the project folder.
-   - Choose the template before writing:
-     - `assets/project-template` for CJME / Chinese-journal style papers.
-     - `assets/project-template-ieee` for IEEE-like single-column course reports; keep every top-level section on a fresh page in this template.
-   - Use `examples/` only as finished reference projects, not as clean starters.
-   - Keep the same layout: `docs/`, `docs/sections/`, `refs/papers/`, `refs/notes/`, `refs/bib/`, `assets/`.
+1. 创建项目目录。
+   - 写作前先选择模板：
+     - `assets/project-template`：用于 CJME / 中文期刊风格论文。
+     - `assets/project-template-ieee`：用于 IEEE 风格单栏课程报告；该模板要求每个一级章节单独起页。
+   - `examples/` 只作为已完成成品参考，不作为干净起点。
+   - 保持统一目录结构：`docs/`、`docs/sections/`、`refs/papers/`、`refs/notes/`、`refs/bib/`、`assets/`。
 
-2. Read and update `README.md` before writing.
-   - Treat the `写作内容` block as the source of truth for topic, expected content scope, article structure, page count, and word count; treat the remaining README sections as the source of truth for citation rules, image rules, formatting rules, and submission constraints.
-   - Replace every placeholder before substantive drafting.
+2. 写作前先阅读并更新 `README.md`。
+   - 将 `写作内容` 视为主题、内容范围、文章结构、页数和字数的唯一依据；其余部分视为引用、图片、格式和交付约束的唯一依据。
+   - 在开始实质性写作前，替换所有占位内容。
 
-3. Plan before drafting.
-   - Use `academic-paper-strategist` first for topic confirmation, search strategy, gap analysis, source selection, and outline design.
-   - Do not draft the paper until the topic, outline, and evidence base are coherent.
-   - Prefer a review-paper arc that moves from problem framing -> foundational concepts -> method families -> comparison/synthesis -> applications or integration trends -> current problems -> conclusion, unless the assignment demands another structure.
+3. 先规划，再动笔。
+   - 先使用 `academic-paper-strategist` 完成选题确认、检索策略、研究缺口分析、文献筛选和提纲设计。
+   - 在主题、提纲和证据库尚未统一之前，不要开始写正文。
+   - 除非任务另有要求，优先采用适合综述论文的主线：问题界定 -> 基础概念 -> 方法谱系 -> 比较与综合 -> 应用或融合趋势 -> 当前问题 -> 结论。
 
-4. Build the evidence base before drafting.
-   - If `refs/papers/` is empty, stop and download papers before any substantive drafting; do not begin writing from an empty evidence base.
-   - Download the required real papers into `refs/papers/` first, targeting about 42 total references unless the project README says otherwise.
-   - Include at least 10 papers from the field's leading journals or top conferences before drafting so the review is anchored in high-quality literature rather than only peripheral sources.
-   - Build a recent literature set: keep all selected papers within the last 5 years and control the Chinese-to-English literature ratio at about `3:7`.
-   - Maintain `refs/notes/paper_index.md` as the allowed-citation ledger. Prefer recording a local PDF link for each key; the checker accepts a key-only row but cannot verify a file path from it.
-   - Assign each selected paper an argument role before drafting: foundation, method family, comparison, application, trend, figure source, or limitation. A strong review is planned by role, not by a pile of papers.
-   - Add only real sources to `refs/bib/references.bib`.
-   - Every paper placed in `refs/papers/` must be cited in the manuscript; keep the evidence folder lean rather than downloading unused papers.
+4. 先建立证据库，再起草。
+   - 若 `refs/papers/` 为空，立即停止后续写作并先下载论文；不能在证据库为空的情况下开始正文。
+   - 全文默认引用总量约 42 篇，除非项目 README 另有要求；这不等于必须把 42 篇论文都下载到 `refs/papers/`。
+   - `refs/papers/` 中至少保留 10 篇相关领域顶会或顶刊论文，作为可核查的核心证据库，确保综述建立在高质量文献之上，而不是只依赖边缘来源。
+   - 文献集应尽量全部控制在近 5 年，中英文比例约为 `3:7`。
+   - 维护 `refs/notes/paper_index.md` 作为允许引用的账本。尽量为每个 key 记录本地 PDF 链接；检查器接受仅有 key 的行，但无法据此验证文件路径。
+   - 在起草前为每篇论文分配论证角色，如：基础、方法谱系、比较、应用、趋势、图源或局限。高质量综述应按“论证角色”组织，而不是简单堆叠论文。
+   - `refs/bib/references.bib` 中只允许放入真实来源。
+   - 放入 `refs/papers/` 的核心论文都必须在正文中被引用；本地证据库应保持精炼，不必机械下载全文所引全部文献。
 
-5. Draft in order.
-   - Then use `academic-paper-composer` to write from the approved outline.
-   - Use numbered headings in the required style: `1.` / `1.1` / `1.1.1`.
-   - Keep all headings concise enough to avoid wrapping onto two lines whenever possible; shorten and refine section titles, figure captions, and table captions so they remain precise but compact.
-   - For IEEE-style course reports, preserve the template rule that every top-level `\section` begins on a new page.
-   - Write the “总结与展望” or “结论” section in a total-part-total structure. The middle summary points must be formatted as `（1）` / `（2）` / `（3）`, and each point must be its own standalone paragraph rather than compressed into one block.
-   - Keep the prose under each heading substantive: avoid thin one- or two-sentence sections; ensure each section develops a clear claim, supporting explanation, and coherent transition so the paper remains content-rich, logically clear, and well layered.
-   - Write review sections as synthesis, not as serial paper summaries. Each substantial subsection should usually state the organizing question, explain the core mechanism, compare representative routes or trade-offs, and close with the engineering meaning or unresolved issue.
-   - After every figure or table, add an interpretive paragraph that explains what the visual shows and why it matters to the argument; never leave visuals as decorative inserts.
-   - Use at least one comparison table when the topic naturally contains multiple method families, pipelines, models, or design routes.
-   - In the introduction, move from domain problem -> limitation of conventional approaches -> why the focal method matters -> what this paper covers.
-   - During the first drafting pass, add about 3-5 mathematical formulas when the topic reasonably supports them. Every formula must come from a textbook or paper and retain a clear citation to its source; do not invent decorative formulas merely to satisfy a quota.
-   - Leave figure placeholders first; tell the author to capture reference-paper figures into `assets/` later.
+5. 按顺序起草。
+   - 使用 `academic-paper-composer` 基于已确认提纲写作。
+   - 标题层级统一使用 `1.` / `1.1` / `1.1.1`。
+   - 标题、图题、表题都应尽量精简，能单行就不要无谓换成两行。
+   - 对 IEEE 风格课程报告，保留“每个一级章节单独起页”的模板规则。
+   - “总结与展望”或“结论”采用总—分—总结构；中间的 `（1）` / `（2）` / `（3）` 必须各自独立成段，不能压成一整块。
+   - 每个标题下的内容都要充实，避免只有一两句的薄弱段落；每节都应有清晰论点、必要展开和自然过渡，使全文内容充分、逻辑清楚、层次分明。
+   - 综述段落要写成“综合”，不要写成逐篇文献摘要串联。每个重要小节通常应完成四件事：提出组织问题、解释核心机制、比较代表性路线或取舍、落到工程意义或未解问题。
+   - 每张图和每个表之后，都应有解释段，说明它展示了什么、为何支撑当前论证；不要让图表沦为装饰。
+   - 当主题天然包含多类方法、流程、模型或设计路线时，至少使用 1 张比较表。
+   - 引言应按照“领域问题 -> 传统方法局限 -> 本文聚焦方法为何重要 -> 本文覆盖范围”的顺序展开。
+   - 初次成稿时，若主题适合，正文优先加入约 3–5 个数学公式。每个公式都必须来自教材或论文，并保留明确来源；不得为了凑数虚构装饰性公式。
+   - 初稿阶段先保留图位；提醒作者后续从参考论文中截取合适图片放入 `assets/`。
 
-6. Revise as a reviewer, not as a copyeditor.
-   - Remove course-like phrasing such as “从课程内容看”“课程要求表明”.
-   - Check topic alignment, argument continuity, section balance, paragraph sufficiency, prose clarity, abstract-body consistency, and useless material.
-   - Tighten overlong section titles, figure captions, and table captions during revision; preserve meaning, but remove wording that causes avoidable line wraps or visual clutter.
-   - Check whether the paper merely catalogs literature or actually makes review-level judgments: boundaries, strengths, weaknesses, applicability, bottlenecks, and future directions should all be explicit.
-   - Check whether the final abstract mirrors the real paper arc: scope, methods covered, application scene, and concluding judgment should match the body rather than generic background prose.
-   - When Chinese prose polish matters, use `humanizer-zh` after the substantive revision pass to polish expression while preserving content density, logical clarity, and hierarchical structure.
-   - When the paper is technical/CS-oriented, also use `academic-research-writing`.
+6. 以审稿人视角修订，而不是只做文字校对。
+   - 删除“从课程内容看”“课程要求表明”等课程化表达。
+   - 检查主题一致性、论证连续性、章节均衡、段落是否充实、语言清晰度、摘要与正文的一致性，以及无效内容。
+   - 修订过长标题、图题和表题；保留原意，但去掉会造成无谓换行或视觉杂讯的冗余措辞。
+   - 检查全文是否只是“文献罗列”，还是已经形成真正的综述判断：方法边界、优势、劣势、适用场景、瓶颈和未来方向都应明确出现。
+   - 检查最终摘要是否真实映射正文主线：范围、覆盖方法、应用场景和结论判断应与正文一致，而不是停留在泛泛背景介绍。
+   - 中文表达需要润色时，在实质性修订之后使用 `humanizer-zh`，并保留内容密度、逻辑清晰度和层次结构。
+   - 若论文偏技术 / CS 方向，同时使用 `academic-research-writing`。
 
-7. Run deterministic checks before declaring completion.
-   - Use `scripts/check_review_project.py <project_root>`.
-   - This script only performs mechanical checks; fix any violations it reports, then rerun until clean.
+7. 宣布完成前，运行确定性检查。
+   - 使用 `scripts/check_review_project.py <project_root>`。
+   - 该脚本只负责机械检查；若发现问题，先修复，再重复运行直到通过。
 
-## Required final checks
+## 交付前必须检查
 
-- Every paper in `refs/papers/` is cited in the manuscript, and every cited paper appears in `refs/notes/paper_index.md`; use local PDF links there when you want the checker to verify file existence.
-- `refs/papers/` is not empty before drafting, and the evidence base includes at least 10 papers from leading journals or top conferences in the relevant field. Check this manually.
-- Every reference stays within the citation-frequency rule in `README.md`.
-- The paper uses about 42 references unless the README specifies a different target.
-- The reference set stays within the last 5 years and keeps the Chinese-to-English literature ratio near `3:7`. Check this manually.
-- Every figure label is referenced exactly once, and every figure reference resolves to an actual figure label.
-- Section titles, figure captions, and table captions are concise and avoid unnecessary two-line wrapping where possible. Check this manually in the compiled layout.
-- When the topic supports formulas, the first full draft includes about 3-5 source-backed mathematical formulas, each traceable to a textbook or paper rather than invented ad hoc. Check this manually.
-- In IEEE-style course reports, every top-level section begins on a fresh page. Check this manually after compilation.
-- The conclusion section uses a total-part-total structure, and numbered summary points `（1）` / `（2）` / `（3）` appear as separate standalone paragraphs. Check this manually.
-- Paragraphs under each heading are sufficiently developed rather than perfunctory, with clear logic, adequate content, and distinct levels of argument. Check this manually.
-- The introduction follows a clear funnel from problem to gap to review scope, and the body reads as synthesis rather than a paper-by-paper catalog. Check this manually.
-- Every major figure or table is interpreted in nearby prose, and at least one comparison table is used when the topic contains multiple method families or routes. Check this manually.
-- The paper states review-level judgments explicitly: comparative strengths, limitations, applicability, and open problems are visible rather than implied. Check this manually.
-- Abstract, title, keywords, and body all match the same topic. Check this manually.
-- No personal information remains in reusable templates.
+- `refs/papers/` 中的核心论文都已在正文中引用；正文中出现的每篇论文都已登记到 `refs/notes/paper_index.md`。若需要让检查器验证文件是否存在，请在索引中保留本地 PDF 链接。
+- 起草前 `refs/papers/` 不为空，且证据库中至少包含 10 篇相关领域顶会或顶刊论文。此项需人工确认。
+- 每篇文献都满足 `README.md` 中的引用频次规则。
+- 除非 README 另有要求，全文参考文献总数约为 42 篇。
+- 文献整体控制在近 5 年，中英文比例约为 `3:7`。此项需人工确认。
+- 每个图标签只被定义 1 次、引用 1 次；每个图引用都能解析到真实图标签。
+- 标题、图题、表题足够精简，在最终版式中尽量避免无必要的两行换行。此项需在编译后人工查看。
+- 若主题适合公式，首版完整初稿应包含约 3–5 个可追溯到教材或论文的数学公式，而不是临时虚构的公式。此项需人工确认。
+- 对 IEEE 风格课程报告，每个一级章节都应另起一页。此项需在编译后人工确认。
+- “总结与展望”或“结论”采用总—分—总结构，且 `（1）` / `（2）` / `（3）` 分别独立成段。此项需人工确认。
+- 每个标题下的段落都已充分展开，而不是敷衍性短段；全文逻辑清楚、论证层次明确。此项需人工确认。
+- 引言具备从问题到缺口再到综述范围的漏斗结构；正文读起来是综合评述，而不是逐篇文献目录。此项需人工确认。
+- 每个重要图表都在附近正文中得到解释；当主题存在多种方法路线时，至少使用 1 张比较表。此项需人工确认。
+- 全文已经明确给出综述级判断：比较优势、局限、适用范围和开放问题都能被读者直接看到，而不是只能自行猜测。此项需人工确认。
+- 摘要、标题、关键词和正文都围绕同一主题。
+- 可复用模板中不得残留个人信息。
 
-## Validation
+## 验证
 
-- Run `scripts/check_review_project.py <project_root>` before delivery.
-- It checks citation frequency, bibliography entries, paper-index coverage, downloaded-PDF coverage, optional local PDF links, minimum citation count, and figure-reference mechanics.
+- 交付前运行 `scripts/check_review_project.py <project_root>`。
+- 该脚本检查：引用频次、BibTeX 条目、paper index 覆盖、已下载 PDF 覆盖、本地 PDF 链接、最小引用数量以及图引用机制。
