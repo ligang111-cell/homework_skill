@@ -18,3 +18,4 @@ main.run.xml
 main.bcf
 .omx/
 
+__pycache__

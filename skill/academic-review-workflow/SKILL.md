@@ -70,4 +70,4 @@ Use this skill as the orchestration layer around an academic review project.
 ## Validation
 
 - Run `scripts/check_review_project.py <project_root>` before delivery.
-- It checks citation frequency, bibliography entries, paper-index coverage, optional local PDF links, minimum citation count, and figure-reference mechanics.
+- It checks citation frequency, bibliography entries, paper-index coverage, downloaded-PDF coverage, optional local PDF links, minimum citation count, and figure-reference mechanics.

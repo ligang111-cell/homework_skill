@@ -12,7 +12,7 @@ FIG_REF_RE = re.compile(r"\\(?:ref|autoref|cref)\{(fig:[^}]+)\}")
 BIB_KEY_RE = re.compile(r"@\w+\s*\{\s*([^,\s]+)", re.MULTILINE)
 MARKDOWN_LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 MAX_CITATION_RE = re.compile(r"每篇文献最多引用\s*(\d+)\s*次")
-MIN_REFERENCE_RE = re.compile(r"参考文献数量：\s*(\d+)")
+MIN_REFERENCE_RE = re.compile(r"参考文献数量：\s*(?:约\s*)?(\d+)")
 
 
 def read_all_tex(project_root: Path) -> str:
@@ -71,6 +71,13 @@ def read_rules(project_root: Path) -> tuple[int, int | None]:
     return max_citations, min_references
 
 
+def list_downloaded_pdfs(project_root: Path) -> set[Path]:
+    papers = project_root / "refs" / "papers"
+    if not papers.exists():
+        return set()
+    return {path.resolve() for path in papers.glob("*.pdf")}
+
+
 def main() -> int:
     if len(sys.argv) != 2:
         print("Usage: python check_review_project.py <project_root>")
@@ -81,6 +88,7 @@ def main() -> int:
     citations = parse_citations(tex)
     bib_keys = parse_bib_keys(root)
     index = parse_index(root, bib_keys)
+    downloaded_pdfs = list_downloaded_pdfs(root)
     max_citations, min_references = read_rules(root)
     fig_labels = Counter(FIG_LABEL_RE.findall(tex))
     fig_refs = Counter(FIG_REF_RE.findall(tex))
@@ -96,6 +104,14 @@ def main() -> int:
             problems.append(f"missing paper-index entry: {key}")
         elif index[key] is not None and not index[key].exists():
             problems.append(f"missing downloaded PDF for {key}: {index[key]}")
+
+    linked_pdfs = {path for path in index.values() if path is not None}
+    for pdf in sorted(downloaded_pdfs - linked_pdfs):
+        problems.append(f"downloaded PDF missing paper-index link: {pdf}")
+
+    for key, path in sorted(index.items()):
+        if path is not None and key not in citations:
+            problems.append(f"downloaded paper not cited: {key}")
 
     if min_references is not None and len(citations) < min_references:
         problems.append(
@@ -115,6 +131,7 @@ def main() -> int:
 
     print(f"project: {root}")
     print(f"unique citations: {len(citations)}")
+    print(f"downloaded PDFs: {len(downloaded_pdfs)}")
     print(f"figure labels: {len(fig_labels)}")
     if problems:
         print("status: FAIL")
