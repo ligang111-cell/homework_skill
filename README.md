@@ -40,6 +40,28 @@ python skill/academic-review-workflow/scripts/check_review_project.py <你的项
 
 这个脚本负责机械检查；主题一致性、摘要是否贴合正文、结论结构是否自然，仍需要人工复核。
 
+## 成品预览
+
+### CJME 风格
+
+| 首页 | 方法与公式 |
+| --- | --- |
+| ![CJME 首页](picture/cjme-01.png) | ![CJME 方法与公式](picture/cjme-02.png) |
+
+| 智能融合趋势 | 总结与展望 |
+| --- | --- |
+| ![CJME 智能融合趋势](picture/cjme-03.png) | ![CJME 总结与展望](picture/cjme-04.png) |
+
+### IEEE 风格
+
+| 封面 | 产品与任务分析 |
+| --- | --- |
+| ![IEEE 封面](picture/ieee-01.png) | ![IEEE 产品与任务分析](picture/ieee-02.png) |
+
+| 智能技术应用 | 新模式章节 |
+| --- | --- |
+| ![IEEE 智能技术应用](picture/ieee-03.png) | ![IEEE 新模式章节](picture/ieee-04.png) |
+
 ## 仓库结构
 
 ```text

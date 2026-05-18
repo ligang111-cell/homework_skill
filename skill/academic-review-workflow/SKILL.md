@@ -23,6 +23,7 @@ Use this skill as the orchestration layer around an academic review project.
 3. Plan before drafting.
    - Use `academic-paper-strategist` first for topic confirmation, search strategy, gap analysis, source selection, and outline design.
    - Do not draft the paper until the topic, outline, and evidence base are coherent.
+   - Prefer a review-paper arc that moves from problem framing -> foundational concepts -> method families -> comparison/synthesis -> applications or integration trends -> current problems -> conclusion, unless the assignment demands another structure.
 
 4. Build the evidence base before drafting.
    - If `refs/papers/` is empty, stop and download papers before any substantive drafting; do not begin writing from an empty evidence base.
@@ -30,6 +31,7 @@ Use this skill as the orchestration layer around an academic review project.
    - Include at least 10 papers from the field's leading journals or top conferences before drafting so the review is anchored in high-quality literature rather than only peripheral sources.
    - Build a recent literature set: keep all selected papers within the last 5 years and control the Chinese-to-English literature ratio at about `3:7`.
    - Maintain `refs/notes/paper_index.md` as the allowed-citation ledger. Prefer recording a local PDF link for each key; the checker accepts a key-only row but cannot verify a file path from it.
+   - Assign each selected paper an argument role before drafting: foundation, method family, comparison, application, trend, figure source, or limitation. A strong review is planned by role, not by a pile of papers.
    - Add only real sources to `refs/bib/references.bib`.
    - Every paper placed in `refs/papers/` must be cited in the manuscript; keep the evidence folder lean rather than downloading unused papers.
 
@@ -40,6 +42,10 @@ Use this skill as the orchestration layer around an academic review project.
    - For IEEE-style course reports, preserve the template rule that every top-level `\section` begins on a new page.
    - Write the “总结与展望” or “结论” section in a total-part-total structure. The middle summary points must be formatted as `（1）` / `（2）` / `（3）`, and each point must be its own standalone paragraph rather than compressed into one block.
    - Keep the prose under each heading substantive: avoid thin one- or two-sentence sections; ensure each section develops a clear claim, supporting explanation, and coherent transition so the paper remains content-rich, logically clear, and well layered.
+   - Write review sections as synthesis, not as serial paper summaries. Each substantial subsection should usually state the organizing question, explain the core mechanism, compare representative routes or trade-offs, and close with the engineering meaning or unresolved issue.
+   - After every figure or table, add an interpretive paragraph that explains what the visual shows and why it matters to the argument; never leave visuals as decorative inserts.
+   - Use at least one comparison table when the topic naturally contains multiple method families, pipelines, models, or design routes.
+   - In the introduction, move from domain problem -> limitation of conventional approaches -> why the focal method matters -> what this paper covers.
    - During the first drafting pass, add about 3-5 mathematical formulas when the topic reasonably supports them. Every formula must come from a textbook or paper and retain a clear citation to its source; do not invent decorative formulas merely to satisfy a quota.
    - Leave figure placeholders first; tell the author to capture reference-paper figures into `assets/` later.
 
@@ -47,6 +53,8 @@ Use this skill as the orchestration layer around an academic review project.
    - Remove course-like phrasing such as “从课程内容看”“课程要求表明”.
    - Check topic alignment, argument continuity, section balance, paragraph sufficiency, prose clarity, abstract-body consistency, and useless material.
    - Tighten overlong section titles, figure captions, and table captions during revision; preserve meaning, but remove wording that causes avoidable line wraps or visual clutter.
+   - Check whether the paper merely catalogs literature or actually makes review-level judgments: boundaries, strengths, weaknesses, applicability, bottlenecks, and future directions should all be explicit.
+   - Check whether the final abstract mirrors the real paper arc: scope, methods covered, application scene, and concluding judgment should match the body rather than generic background prose.
    - When Chinese prose polish matters, use `humanizer-zh` after the substantive revision pass to polish expression while preserving content density, logical clarity, and hierarchical structure.
    - When the paper is technical/CS-oriented, also use `academic-research-writing`.
 
@@ -67,6 +75,9 @@ Use this skill as the orchestration layer around an academic review project.
 - In IEEE-style course reports, every top-level section begins on a fresh page. Check this manually after compilation.
 - The conclusion section uses a total-part-total structure, and numbered summary points `（1）` / `（2）` / `（3）` appear as separate standalone paragraphs. Check this manually.
 - Paragraphs under each heading are sufficiently developed rather than perfunctory, with clear logic, adequate content, and distinct levels of argument. Check this manually.
+- The introduction follows a clear funnel from problem to gap to review scope, and the body reads as synthesis rather than a paper-by-paper catalog. Check this manually.
+- Every major figure or table is interpreted in nearby prose, and at least one comparison table is used when the topic contains multiple method families or routes. Check this manually.
+- The paper states review-level judgments explicitly: comparative strengths, limitations, applicability, and open problems are visible rather than implied. Check this manually.
 - Abstract, title, keywords, and body all match the same topic. Check this manually.
 - No personal information remains in reusable templates.
 
