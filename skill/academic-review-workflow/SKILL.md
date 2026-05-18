@@ -1,6 +1,6 @@
 ---
 name: academic-review-workflow
-description: Create and execute structured academic review-paper projects from a reusable folder template. Use when Codex needs to scaffold a literature-review/report workspace, turn README requirements into an ordered writing plan, coordinate academic-paper-strategist and academic-paper-composer, enforce downloaded-paper-only citations, or run final checks for citation frequency, figure references, topic fit, abstract fidelity, and reviewer-style quality control.
+description: Create and execute structured academic review-paper projects from a reusable folder template. Use when Codex needs to scaffold a literature-review/report workspace, turn README requirements into an ordered writing plan, coordinate academic-paper-strategist and academic-paper-composer, enforce evidence-base citation rules, or run final checks for citation frequency, figure references, topic fit, abstract fidelity, and reviewer-style quality control.
 ---
 
 # Academic Review Workflow
@@ -25,14 +25,16 @@ Use this skill as the orchestration layer around an academic review project.
    - Do not draft the paper until the topic, outline, and evidence base are coherent.
 
 4. Build the evidence base before drafting.
-   - Download the required real papers into `refs/papers/` first.
+   - Download the required real papers into `refs/papers/` first, targeting about 42 total references unless the project README says otherwise.
+   - Build a recent literature set: keep all selected papers within the last 5 years and control the Chinese-to-English literature ratio at about `3:7`.
    - Maintain `refs/notes/paper_index.md` as the allowed-citation ledger. Prefer recording a local PDF link for each key; the checker accepts a key-only row but cannot verify a file path from it.
    - Add only real sources to `refs/bib/references.bib`.
-   - Do not cite undownloaded papers.
+   - Every paper placed in `refs/papers/` must be cited in the manuscript; keep the evidence folder lean rather than downloading unused papers.
 
 5. Draft in order.
    - Then use `academic-paper-composer` to write from the approved outline.
    - Use numbered headings in the required style: `1.` / `1.1` / `1.1.1`.
+   - Keep all headings concise enough to avoid wrapping onto two lines whenever possible; shorten and refine section titles, figure captions, and table captions so they remain precise but compact.
    - For IEEE-style course reports, preserve the template rule that every top-level `\section` begins on a new page.
    - Write the “总结与展望” or “结论” section in a total-part-total structure. The middle summary points must be formatted as `（1）` / `（2）` / `（3）`, and each point must be its own standalone paragraph rather than compressed into one block.
    - Keep the prose under each heading substantive: avoid thin one- or two-sentence sections; ensure each section develops a clear claim, supporting explanation, and coherent transition so the paper remains content-rich, logically clear, and well layered.
@@ -42,6 +44,7 @@ Use this skill as the orchestration layer around an academic review project.
 6. Revise as a reviewer, not as a copyeditor.
    - Remove course-like phrasing such as “从课程内容看”“课程要求表明”.
    - Check topic alignment, argument continuity, section balance, paragraph sufficiency, prose clarity, abstract-body consistency, and useless material.
+   - Tighten overlong section titles, figure captions, and table captions during revision; preserve meaning, but remove wording that causes avoidable line wraps or visual clutter.
    - When Chinese prose polish matters, use `humanizer-zh` after the substantive revision pass to polish expression while preserving content density, logical clarity, and hierarchical structure.
    - When the paper is technical/CS-oriented, also use `academic-research-writing`.
 
@@ -51,10 +54,12 @@ Use this skill as the orchestration layer around an academic review project.
 
 ## Required final checks
 
-- Every cited paper appears in `refs/notes/paper_index.md`; use local PDF links there when you want the checker to verify file existence.
+- Every paper in `refs/papers/` is cited in the manuscript, and every cited paper appears in `refs/notes/paper_index.md`; use local PDF links there when you want the checker to verify file existence.
 - Every reference stays within the citation-frequency rule in `README.md`.
-- The paper reaches the README minimum reference count when that count is numeric.
+- The paper uses about 42 references unless the README specifies a different target.
+- The reference set stays within the last 5 years and keeps the Chinese-to-English literature ratio near `3:7`. Check this manually.
 - Every figure label is referenced exactly once, and every figure reference resolves to an actual figure label.
+- Section titles, figure captions, and table captions are concise and avoid unnecessary two-line wrapping where possible. Check this manually in the compiled layout.
 - When the topic supports formulas, the first full draft includes about 3-5 source-backed mathematical formulas, each traceable to a textbook or paper rather than invented ad hoc. Check this manually.
 - In IEEE-style course reports, every top-level section begins on a fresh page. Check this manually after compilation.
 - The conclusion section uses a total-part-total structure, and numbered summary points `（1）` / `（2）` / `（3）` appear as separate standalone paragraphs. Check this manually.
