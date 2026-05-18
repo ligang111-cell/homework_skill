@@ -25,7 +25,9 @@ Use this skill as the orchestration layer around an academic review project.
    - Do not draft the paper until the topic, outline, and evidence base are coherent.
 
 4. Build the evidence base before drafting.
+   - If `refs/papers/` is empty, stop and download papers before any substantive drafting; do not begin writing from an empty evidence base.
    - Download the required real papers into `refs/papers/` first, targeting about 42 total references unless the project README says otherwise.
+   - Include at least 10 papers from the field's leading journals or top conferences before drafting so the review is anchored in high-quality literature rather than only peripheral sources.
    - Build a recent literature set: keep all selected papers within the last 5 years and control the Chinese-to-English literature ratio at about `3:7`.
    - Maintain `refs/notes/paper_index.md` as the allowed-citation ledger. Prefer recording a local PDF link for each key; the checker accepts a key-only row but cannot verify a file path from it.
    - Add only real sources to `refs/bib/references.bib`.
@@ -55,6 +57,7 @@ Use this skill as the orchestration layer around an academic review project.
 ## Required final checks
 
 - Every paper in `refs/papers/` is cited in the manuscript, and every cited paper appears in `refs/notes/paper_index.md`; use local PDF links there when you want the checker to verify file existence.
+- `refs/papers/` is not empty before drafting, and the evidence base includes at least 10 papers from leading journals or top conferences in the relevant field. Check this manually.
 - Every reference stays within the citation-frequency rule in `README.md`.
 - The paper uses about 42 references unless the README specifies a different target.
 - The reference set stays within the last 5 years and keeps the Chinese-to-English literature ratio near `3:7`. Check this manually.
