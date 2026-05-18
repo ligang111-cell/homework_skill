@@ -1,36 +1,76 @@
-# 智能装配与检测
+# 科技论文写作（IEEE 风格）
 
-Topic: 动力电池包智能装配与检测
-大作业要求，这是最核心的部分，你必须要牢记
-选题方向：“智能装配与检测”
-要求：结合某一具体产品，分析其装配工艺过程、装配过程中所采用的数字化手段与装备，结合目前机器人技术、人机协作技术、AI 技术、机器视觉、大模型、智能体、知识图谱、具身智能（至少选三种以上）等相关技术在装配过程中的应用，尝试提出一种新的装配模式，并对其基本原理、软硬件系统构成、关键技术及途径、应用前景、该装配模式的优缺点进行论述。
-5000 字以上，采用期刊论文的格式，严禁大篇幅引用。
+先修改本文件，再开始写作。
 
-Structure:
-- `docs/` report source files
-- `docs/sections/` section-level TeX files
-- `refs/papers/` downloaded reference PDFs
-- `refs/notes/` per-paper reading notes
-- `refs/bib/` BibTeX database
-- `assets/` figures used in the report
+## 写作内容
 
-Build:
-- Working file: `docs/main.tex`
-- Recommended engine: `xelatex`
-- Page margins fixed for the current course-report layout:
-  - top: `2.15cm`
-  - bottom: `2.15cm`
-  - left: `1.95cm`
-  - right: `1.95cm`
-- Typical build sequence:
-  - `cd docs`
-  - `xelatex main.tex`
-  - `bibtex main`
-  - `xelatex main.tex`
-  - `xelatex main.tex`
+- 主题：动力电池包智能装配与检测
+- 字数 / 页数：5000 字以上
+- 内容：结合动力电池包，分析其装配工艺、数字化手段与装备，讨论机器人、人机协作、AI、机器视觉、大模型、智能体、知识图谱、具身智能等技术在装配中的应用，并提出一种新的装配模式，论述其原理、系统构成、关键技术、应用前景及优缺点
+- 文章结构：
+  - 引言
+  - 产品与任务分析
+  - 装配工艺分析
+  - 数字化装备与技术基础
+  - 智能技术应用
+  - 新型装配模式
+  - 系统实现路径
+  - 应用前景
+  - 结论
 
-Notes:
-- LaTeX build artifacts in `docs/` are ignored by git and should not be committed
-- The current report title is `动力电池包智能装配与检测`
-- Reference PDFs are stored in `refs/papers/` and currently focus on battery pack manufacturing, machine vision, human-robot collaboration, knowledge graphs, and LLM-assisted manufacturing
-- Figure positions in the draft are placeholders; final figures should come from the downloaded reference papers
+## 写作要求
+
+- 参考文献数量：约 42 篇
+- 中英文文献比例：约 `3:7`
+- 文献年份：均为近 5 年
+- 题目层级格式：`1.` / `1.1` / `1.1.1`
+- 标题、图题、表题应尽量精简，优先控制在单行内，避免无必要的两行换行
+- 每个一级章节（`\section`）单独起页
+- “总结与展望”或“结论”部分采用总—分—总结构，中间使用“（1）（2）（3）”分点，且“（1）（2）（3）”分别独立成段
+- 每个标题下的段落内容应充实，避免过短，保证逻辑清晰、层次分明
+- 数学公式要求：初次写作时，若主题适合，正文中优先加入约 3–5 个数学公式；公式必须来自教材或论文，并保留来源，不得为凑数虚构公式
+- 图片要求：先留占位，作者后续从参考论文中截图并放入 `assets/`
+- 引用要求：`refs/papers/` 中的论文必须全部引用；每篇文献最多引用 2 次；`paper_index.md` 中尽量为每篇论文保留本地 PDF 链接
+- 禁止措辞：不要出现“从课程内容看”“课程要求表明”等课程化表述
+
+## 交付前检查
+
+1. 摘要与正文一致
+2. 全文主题一致，无无用内容
+3. 参考文献约 42 篇，且 `refs/papers/` 中论文均已在正文中引用
+4. 中英文文献比例约为 `3:7`，且全部为近 5 年文献
+5. 每篇文献最多引用 2 次
+6. 每张图必须且只能被引用 1 次
+7. 每个一级章节（`\section`）单独起页
+8. 标题、图题、表题应已精简，尽量避免无必要的两行换行
+9. 若主题适合，初稿应包含约 3–5 个来自教材或论文且保留来源的数学公式
+10. “总结与展望”或“结论”部分符合总—分—总结构，且“（1）（2）（3）”分别独立成段
+11. 以审稿人视角检查：表达清晰、行文流畅、逻辑完整、层次分明，各标题下内容充实
+
+## 目录
+
+- `docs/`：正文源码
+- `docs/sections/`：分章节 TeX 文件
+- `refs/papers/`：已下载论文
+- `refs/notes/`：文献索引
+- `refs/bib/`：BibTeX 数据库
+- `assets/`：图片
+
+## 编译
+
+- 主文件：`docs/main.tex`
+- 引擎：`xelatex`
+- 参考文献：`bibtex`
+- 当前课程报告版式页边距：
+  - 上：`2.15cm`
+  - 下：`2.15cm`
+  - 左：`1.95cm`
+  - 右：`1.95cm`
+
+```bash
+cd docs
+xelatex main.tex
+bibtex main
+xelatex main.tex
+xelatex main.tex
+```

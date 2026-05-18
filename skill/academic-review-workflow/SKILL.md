@@ -17,7 +17,7 @@ Use this skill as the orchestration layer around an academic review project.
    - Keep the same layout: `docs/`, `docs/sections/`, `refs/papers/`, `refs/notes/`, `refs/bib/`, `assets/`.
 
 2. Read and update `README.md` before writing.
-   - Treat the `写作内容` block as the source of truth for topic, expected content scope, page count, and word count; treat the remaining README sections as the source of truth for citation rules, image rules, formatting rules, and submission constraints.
+   - Treat the `写作内容` block as the source of truth for topic, expected content scope, article structure, page count, and word count; treat the remaining README sections as the source of truth for citation rules, image rules, formatting rules, and submission constraints.
    - Replace every placeholder before substantive drafting.
 
 3. Plan before drafting.
