@@ -29,6 +29,9 @@
 % Add this to indent first paragraph of a section
 \RequirePackage[indentafter]{titlesec}
 
+% Set bibliography entries to xiaowu size.
+\renewcommand*{\bibfont}{\normalfont\small}
+
 % algorithm2e settings
 \renewcommand{\algorithmcfname}{算法}
 \SetKwInOut{KwIn}{输入}
@@ -83,10 +86,9 @@
 \titlespacing*{\subsection}{0pt}{.6em}{.6em}
 
 % Set figure/table caption format
-\captionsetup{%
-    labelsep=quad,
-    font=normalsize
-}
+\captionsetup{labelsep=quad}
+\captionsetup[figure]{font={small,rm}}
+\captionsetup[table]{font={small,sf}}
 
 \setlist{%
     nosep, % Remove separation between items

@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{chinese-journal-of-mechanical-engineering}[LaTeX template for Chinese Journal of Mechanical Engineering]
 
-\LoadClass{ctexart}
+\LoadClass[twoside]{ctexart}
 
 \newcommand{\doi}[1]{\def\CJOME@doi{#1}}
 \newcommand{\abst}[1]{\def\CJOME@abstract{#1}}
@@ -28,6 +28,9 @@
 \RequirePackage{multicol}
 % Add this to indent first paragraph of a section
 \RequirePackage[indentafter]{titlesec}
+
+% Set bibliography entries to xiaowu size.
+\renewcommand*{\bibfont}{\normalfont\small}
 
 % algorithm2e settings
 \renewcommand{\algorithmcfname}{算法}
@@ -72,7 +75,8 @@
     \setlength{\headsep}{12pt}%
     \renewcommand{\headrulewidth}{.8pt}
     \fancyhf{}%
-    \fancyhead[C]{\small\vspace{1pt} 机\quad 械\quad 工\quad 程\quad 学\quad 报}}
+    \fancyhead[CE,CO]{\small\vspace{1pt} 机\quad 械\quad 工\quad 程\quad 学\quad 报}%
+    \fancyhead[LE,RO]{\small\vspace{1pt}\thepage}}
 \pagestyle{fancy}
 
 % Set title format and spacing
@@ -82,10 +86,9 @@
 \titlespacing*{\subsection}{0pt}{.6em}{.6em}
 
 % Set figure/table caption format
-\captionsetup{%
-    labelsep=quad,
-    font=normalsize
-}
+\captionsetup{labelsep=quad}
+\captionsetup[figure]{font={small,rm}}
+\captionsetup[table]{font={small,sf}}
 
 \setlist{%
     nosep, % Remove separation between items
